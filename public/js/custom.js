@@ -90,7 +90,7 @@ Echo.private("get-message").listen(".getMessage", (data) => {
         </div>
     </div>`;
         $("#chat-messages").append(html);
-        toastr.success("New Message Notification");
+        toastr.success("New Message Notification From" + );
         audio.play();
     }
 });
