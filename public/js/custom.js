@@ -73,8 +73,7 @@ Echo.join("status-update")
 
 Echo.private("get-message").listen(".getMessage", (data) => {
     if (
-        data.messageData.receiver_id == sender_id &&
-        receiver_id == data.messageData.sender_id
+        data.messageData.receiver_id == sender_id 
     ) {
         var html = `<div class="recepient-user-message">
         <div class="current-user-info-box">
