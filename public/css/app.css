@@ -1,0 +1,56 @@
+.all-users .list-group-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 900;
+    font-size: 22px;
+}
+#chat-messages{
+    height: 400px;
+    overflow-y: scroll;
+}
+
+#chat-with-user-area{
+    display: none;
+}
+.single-user{
+    cursor: pointer;
+}
+.offline-status{
+    color: red;
+}
+.online-status{
+    color: green;
+}
+#chat-messages{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+.current-user-message{
+    display: flex;
+    justify-content: end;
+    background: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+.recepient-user-message{
+    background: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+.current-user-info-box{
+    display: flex;
+    gap: 10px;
+}
+.message-content{
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a1987;
+}
+.message-date{
+    text-align: right;
+    font-size: 14px;
+}
