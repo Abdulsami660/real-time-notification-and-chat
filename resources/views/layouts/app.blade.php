@@ -13,9 +13,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <!-- Scripts -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{{ asset('build/assets/app-wwjXX7cR.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app-Fthe6oXs.css') }}">
         <script src="{{asset('build/assets/app-AJTRl3Cv.js')}}" ></script>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
         <script>
             var sender_id = @json(auth()->user()->id);
             var receiver_id;

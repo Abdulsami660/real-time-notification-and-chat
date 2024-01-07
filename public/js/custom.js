@@ -3,7 +3,7 @@ $.ajaxSetup({
         "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
 });
-var audio = new Audio("message-alert-tune.mp3");
+var audio = new Audio("http://127.0.0.1:8000/message-alert-tune.mp3");
 
 $(document).ready(function () {
     $(".single-user").on("click", function () {
@@ -68,12 +68,12 @@ Echo.join("status-update")
         $("#user-" + user.id + "-status").text("Offline");
     })
     .listen("UserStatusEvent", (e) => {
-        // console.log("hhh" + e);
+        console.log("hhh" + e);
     });
 
 Echo.private("get-message").listen(".getMessage", (data) => {
     if (
-        data.messageData.receiver_id == sender_id 
+        data.messageData.receiver_id == sender_id
     ) {
         var html = `<div class="recepient-user-message">
         <div class="current-user-info-box">
@@ -85,7 +85,7 @@ Echo.private("get-message").listen(".getMessage", (data) => {
                 <p class="message-content" >${data.messageData.message}</p>
                 <p class="">${data.messageData.created_at}</p>
             </div>
-            
+
         </div>
     </div>`;
         $("#chat-messages").append(html);
