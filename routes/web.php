@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (auth()->check()) {
+        return redirect(route('dashboard'));
+    }
+
+    return view('auth.login');
+
 });
 
 Route::get('/dashboard', [UserController::class, 'loadDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
@@ -28,7 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('save-chat',[ChatController::class,'saveChat']);
-Route::post('load-receiver-old-chats',[ChatController::class,'loadOldChats']);
+Route::post('save-chat', [ChatController::class, 'saveChat']);
+Route::post('load-receiver-old-chats', [ChatController::class, 'loadOldChats']);
 
 require __DIR__ . '/auth.php';
